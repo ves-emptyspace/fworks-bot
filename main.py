@@ -13,7 +13,7 @@ from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandl
 
 
 TOKEN = os.environ.get("TOKEN")
-CREDENTIALS = json.loads(os.environ.get("CREDENTIALS"))
+CREDENTIALS = json.load(open(r"./etc/secrets/CREDENTIALS.json"))
 FOLDER_ID = os.environ.get("FOLDER_ID")
 SCOPE = ['https://www.googleapis.com/auth/drive']
 LIST_OF_ADMINS = [int(admin) for admin in os.environ.get("ADMINS").split(', ')] 
